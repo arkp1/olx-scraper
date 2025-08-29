@@ -44,7 +44,7 @@ def parse_with_selenium(url, headless=True):
     opts.add_argument('--lang=en-US')
     driver = webdriver.Chrome(options=opts)
     driver.get(url)
-    # scroll to load more
+   
     SCROLLS = 6
     for _ in range(SCROLLS):
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
