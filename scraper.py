@@ -17,8 +17,7 @@ def parse_with_requests(url):
     r.raise_for_status()
     soup = BeautifulSoup(r.text, 'html.parser')
     items = []
-    # OLX often uses <li> or <div> blocks with data-aut-id or anchors to item pages.
-    # This is a best-effort parser; OLX markup may change.
+
     for a in soup.select('a[href*="/item/"]'):
         title = a.get_text(strip=True)
         href = a.get('href')
